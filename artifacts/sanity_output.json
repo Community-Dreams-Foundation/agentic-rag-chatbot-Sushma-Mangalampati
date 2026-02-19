@@ -1,0 +1,55 @@
+{
+  "implemented_features": [
+    "A",
+    "B"
+  ],
+  "qa": [
+    {
+      "question": "Summarize the main contribution in 3 bullets.",
+      "answer": "The main contributions of Project Alpha are:\n\n- **Hybrid retrieval**: We combine BM25 lexical search with dense vector search, achieving 12% improvement over dense-only baselines on the BEIR benchmark. [Source: sample.txt, Locator: Key contributions in three bullets: (chunk 0)]\n- **Section-aware chunking**: We propose chunking at semantic boundaries (paragraphs, sections) rather than fixed token windows, reducing citation errors by 23%. [Source: sample.txt, Locator: Key contributions in three bullets: (chunk 2)]\n- **Adaptive retrieval**: The system dynamically adjusts the number of retrieved chunks (k) based on query complexity, measured by entropy of the initial retrieval distribution. [Source: sample.txt, Locator: Key contributions in three bullets: (chunk 3)]",
+      "citations": [
+        {
+          "source": "sample.txt",
+          "locator": "Key contributions in three bullets: (chunk 2)",
+          "snippet": "candidate chunks are retrieved using dense embeddings; second, a lightweight reranker applies metadata filters (e.g., document type, date) to improve precision. Key contributions in three bullets: - *..."
+        },
+        {
+          "source": "sample.txt",
+          "locator": "Key contributions in three bullets: (chunk 3)",
+          "snippet": "type, date) to improve precision. Key contributions in three bullets: - **Hybrid retrieval**: We combine BM25 lexical search with dense vector search, achieving 12% improvement over dense-only baselin..."
+        },
+        {
+          "source": "sample.txt",
+          "locator": "## Assumptions and Limitations (chunk 5)",
+          "snippet": "at semantic boundaries (paragraphs, sections) rather than fixed token windows, reducing citation errors by 23%. - **Adaptive retrieval**: The system dynamically adjusts the number of retrieved chunks ..."
+        },
+        {
+          "source": "sample.txt",
+          "locator": "Key contributions in three bullets: (chunk 0)",
+          "snippet": "# Project Alpha: Overview and Contributions ## Main Contribution Project Alpha introduces a novel approach to retrieval-augmented generation (RAG) that combines semantic search with metadata filtering..."
+        },
+        {
+          "source": "sample.txt",
+          "locator": "## Assumptions and Limitations (chunk 7)",
+          "snippet": "distribution. ## Assumptions and Limitations Our approach assumes that documents have reasonable structural markup (headings, paragraphs). For unstructured text such as raw logs, performance may degra..."
+        }
+      ]
+    }
+  ],
+  "demo": {
+    "memory_writes": [
+      {
+        "target": "USER",
+        "summary": "User prefers weekly summaries on Mondays."
+      },
+      {
+        "target": "USER",
+        "summary": "User is a Project Finance Analyst."
+      },
+      {
+        "target": "COMPANY",
+        "summary": "Asset Management interfaces with Project Finance."
+      }
+    ]
+  }
+}

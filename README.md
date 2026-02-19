@@ -46,9 +46,9 @@ You may implement one feature or multiple. Partial implementations are acceptabl
 ---
 
 ## Participant Info (Required)
-- Full Name:
-- Email:
-- GitHub Username:
+- Full Name: Sushma Mangalampati
+- Email: sushma.mangalampati@gmail.com
+- GitHub Username: Sushma-Mangalampati
 
 ---
 
@@ -157,11 +157,11 @@ bash scripts/sanity_check.sh
 
 ### 3) Video Walkthrough Link (Required)
 
-Add your video link here:
+Add your video link here: https://drive.google.com/file/d/1c9-WXrUgDWS6dpXlNn7rXxQk9nFckjRm/view?usp=share_link
 
 ## Video Walkthrough
 
-PASTE YOUR LINK HERE
+https://drive.google.com/file/d/1c9-WXrUgDWS6dpXlNn7rXxQk9nFckjRm/view?usp=share_link
 
 ## 4) Important
 Submissions missing the Participant Info block may be deprioritized during review.
@@ -239,16 +239,60 @@ These are optional enhancements. They are not required, but can earn bonus point
 
 ---
 
-## Quick Start (YOU MUST FILL THIS IN)
+## Quick Start
 
-Provide exact commands a judge can run.
+**Prerequisites:** Python 3.10+
 
-Example (replace with your real commands):
+**Option A: Local LLM with Ollama (recommended, no API key, no quota)**
 
-```text
-# install dependencies
-# run the app
-# open UI or run CLI
+```bash
+# 1. Install Ollama
+brew install ollama   # macOS
+# Or download from https://ollama.ai
+
+# 2. Pull a model and run Ollama
+ollama serve          # Start Ollama (or it runs in background)
+ollama pull llama3.2  # Download model (~2GB)
+
+# 3. Install Python dependencies
+pip install -r requirements.txt
+
+# 4. Enable Ollama
+export USE_OLLAMA=1
+# Or add USE_OLLAMA=1 to .env
+
+# 5. Run the app
+make run
+```
+
+**Option B: OpenAI API**
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Set your OpenAI API key
+export OPENAI_API_KEY=sk-your-key-here
+
+# 3. Run the app
+make run
+```
+
+**In the UI:** Click "Index sample_docs/" in the sidebar, then ask questions.
+
+**Sanity check (for evaluation):**
+
+```bash
+# Use Ollama for sanity (no API key needed):
+export USE_OLLAMA=1
+make sanity
+
+# Or with OpenAI:
+# export OPENAI_API_KEY=sk-your-key
+# make sanity
+
+bash scripts/sanity_check.sh
+# Validates the output format
 ```
 
 ---
